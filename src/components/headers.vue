@@ -2,24 +2,25 @@
   <div id="header">
     <header>
       <span class="title grow">
-        <router-link class="grow" to="/">YEVPT</router-link>
+        <router-link v-waves class="grow" to="/">YEVPT</router-link>
       </span>
       <span class="link grow">
-        <router-link :class="{ 'checked': checked == '/' }" to="/">首页</router-link>
-        <router-link to="/">留言</router-link>
-        <router-link to="/">友邻</router-link>
+        <router-link v-waves :class="{ 'checked': checked == '/' }" to="/">首页</router-link>
+        <router-link v-waves to="/">留言</router-link>
+        <router-link v-waves to="/">友邻</router-link>
       </span>
-      <span class="login grow">
-        <span class="model">
-          <img src="../assets/moon.png">
+      <span class="login grow" >
+        <span class="model bg">
+          <div class="bg" />
         </span>
-        <router-link class="button" to="/">登录</router-link>
+        <router-link v-waves class="button" to="/">登录</router-link>
       </span>
     </header>
   </div>
 </template>
 
 <script>
+
 export default {
   computed: {
     checked() {
@@ -77,13 +78,16 @@ export default {
         width: 80px;
         height: 56px;
         text-align: center;
+        margin: 0 6px;
         &:hover {
           background: #f1f1f1;
         }
       }
     }
     .login {
+      padding-right: 20px;
       .model {
+        margin-right: 18px;
         border-radius: 3px;
         cursor: pointer;
         padding: 4px 16px;
@@ -93,13 +97,16 @@ export default {
         &:hover {
           background: #f1f1f1;
         }
-        img {
-          vertical-align: middle;
-          width: 19px;
-          object-fit: contain;
+        .bg {
+          background-image: url("../assets/moon.png");
+          background-repeat: no-repeat;
+          background-size: cover;
+          width: 100%;
+          height: 100%;
         }
       }
       .button {
+        vertical-align: bottom;
         display: inline-block;
         width: 64px;
         height: 36px;
